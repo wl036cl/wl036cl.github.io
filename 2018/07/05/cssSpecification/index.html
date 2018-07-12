@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CSS 编码规范对当前规范有更好的建议，请到 issue 页面反馈给我们，谢谢！ 基本规范 缩进使用两个空格  123456789/* bad */.mod-example &amp;#123;    padding-left: 15px;&amp;#125;/* good */.mod-example &amp;#123;  padding-left: 15px;&amp;#125;  在每个声明块的左花括号前添加一个空格">
+<meta name="keywords" content="前端,web,vue,react,html5,js,canvas,webpack,.net,node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cssSpecification">
+<meta property="og:url" content="https://blog.ll36.cn/2018/07/05/cssSpecification/index.html">
+<meta property="og:site_name" content="破浪小栈">
+<meta property="og:description" content="CSS 编码规范对当前规范有更好的建议，请到 issue 页面反馈给我们，谢谢！ 基本规范 缩进使用两个空格  123456789/* bad */.mod-example &amp;#123;    padding-left: 15px;&amp;#125;/* good */.mod-example &amp;#123;  padding-left: 15px;&amp;#125;  在每个声明块的左花括号前添加一个空格">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-12T03:28:00.412Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cssSpecification">
+<meta name="twitter:description" content="CSS 编码规范对当前规范有更好的建议，请到 issue 页面反馈给我们，谢谢！ 基本规范 缩进使用两个空格  123456789/* bad */.mod-example &amp;#123;    padding-left: 15px;&amp;#125;/* good */.mod-example &amp;#123;  padding-left: 15px;&amp;#125;  在每个声明块的左花括号前添加一个空格">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.ll36.cn/2018/07/05/cssSpecification/"/>
+
+
+
+
+
+  <title>cssSpecification | 破浪小栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="planet"><div class="crater"></div></div>
+    <div class="star"></div>
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">破浪小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">前端技术</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.ll36.cn/2018/07/05/cssSpecification/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ll36">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="破浪小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">cssSpecification</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-05T10:56:16+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="CSS-编码规范"><a href="#CSS-编码规范" class="headerlink" title="CSS 编码规范"></a>CSS 编码规范</h2><p>对当前规范有更好的建议，请到 issue 页面反馈给我们，谢谢！</p>
+<h3 id="基本规范"><a href="#基本规范" class="headerlink" title="基本规范"></a>基本规范</h3><ul>
+<li>缩进使用两个空格</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在每个声明块的左花括号前添加一个空格</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod-example</span>&#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>声明块的右花括号应当单独成行</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>每条声明语句的 : 后应该插入一个空格，前面无空格</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>:<span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>所有声明语句都以分号结尾，不能省略不写</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="选择器规范"><a href="#选择器规范" class="headerlink" title="选择器规范"></a>选择器规范</h3><ul>
+<li><p>为选择器分组时，将单独的选择器单独放在一行</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.selector</span>, <span class="selector-class">.selector-secondary</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.selector</span>,</span><br><span class="line"><span class="selector-class">.selector-secondary</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为选择器中的属性添加双引号</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.selector</span><span class="selector-attr">[type=text]</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.selector</span><span class="selector-attr">[type="text"]</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建议选择器层级不要超过5级</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.main</span> <span class="selector-class">.top</span> <span class="selector-class">.left</span> <span class="selector-class">.mod-a</span> <span class="selector-class">.content</span> <span class="selector-class">.detail</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-a</span> <span class="selector-class">.content</span> <span class="selector-class">.detail</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="属性规范"><a href="#属性规范" class="headerlink" title="属性规范"></a>属性规范</h3><h4 id="属性顺序"><a href="#属性顺序" class="headerlink" title="属性顺序"></a>属性顺序</h4><p>建议相关的属性说明放在一组，并按照下面的顺序排列：</p>
+<ol>
+<li>定位（position、left、right、top、bottom、z-index）</li>
+<li>盒子模型（display、float、width、height、margin、padding、border、border-radius）</li>
+<li>排印（font、color、background、line-height、text-align）</li>
+</ol>
+<blockquote>
+<p>由于定位可以从正常的文档流中移除元素，并且还能覆盖盒模型相关的样式，因此排在首位。而盒模型决定了组件的尺寸和位置，所以排第二位。排印只是影响元素的细节样式变化，所以放第三位。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: normal <span class="number">13px</span> <span class="string">"Helvetica Neue"</span>, sans-serif;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">100</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="comment">/* 定位 */</span></span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">100</span>;</span><br><span class="line">  <span class="comment">/* 盒模型 */</span></span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">float</span>: right;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">15px</span> auto;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">  <span class="comment">/* 排印 */</span></span><br><span class="line">  <span class="attribute">font</span>: normal <span class="number">13px</span> <span class="string">"Helvetica Neue"</span>, sans-serif;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="简写形式的属性声明"><a href="#简写形式的属性声明" class="headerlink" title="简写形式的属性声明"></a>简写形式的属性声明</h4><ul>
+<li>对于 background 和 font 这两个简写形式的属性声明，要么就显式声明所有的值，要么就不要使用简写形式。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line"><span class="attribute">font</span>: normal <span class="number">13px</span>;</span><br><span class="line"><span class="attribute">background</span>: red;</span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">url</span>(image.jpg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line"><span class="attribute">font-style</span>: normal;</span><br><span class="line"><span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line"><span class="attribute">background-color</span>: red;</span><br><span class="line"><span class="attribute">background-image</span>: <span class="built_in">url</span>(image.jpg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="0-和-单位"><a href="#0-和-单位" class="headerlink" title="0 和 单位"></a>0 和 单位</h4><ul>
+<li>省略 “0” 值后面的单位。不要在 0 值后面使用单位，除非有值。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="颜色值十六进制表示法"><a href="#颜色值十六进制表示法" class="headerlink" title="颜色值十六进制表示法"></a>颜色值十六进制表示法</h4><ul>
+<li><p>在可能的情况下，使用 3 个字符的十六进制表示法，并始终使用小写的十六进制数字</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line"><span class="attribute">color</span>: <span class="number">#cccccc</span>;</span><br><span class="line"><span class="attribute">background-color</span>: <span class="number">#efefef</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line"><span class="attribute">color</span>: <span class="number">#ccc</span>;</span><br><span class="line"><span class="attribute">background-color</span>: <span class="number">#efefef</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>应避免16进制表示法与rgb表示法混用的情况，并优先使用16进制表示法</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.example-part1</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#efefef</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.example-part2</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">rgb</span>(252, 252, 252);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.example-part1</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#efefef</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.example-part2</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fcfcfc</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="小数"><a href="#小数" class="headerlink" title="小数"></a>小数</h4><ul>
+<li>对于使用到小数的情况，省略前边的 0<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: .<span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h4><ul>
+<li>属性选择器或属性值用双引号 “” 括起来，而 URI 值 url() 不要使用任何引号<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: open sans, arial, sans-serif;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'http://taobao.com/'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">"open sans"</span>, arial, sans-serif;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(http://taobao.com/);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="自定义-font-family"><a href="#自定义-font-family" class="headerlink" title="自定义 font-family"></a>自定义 font-family</h4><ul>
+<li>对于自定义的 font-family 命名，必须使用业务域名前缀作为名字的开始，例如淘宝爱逛街的自定义字体：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="comment">/* 爱逛街业务自定义字体 */</span></span><br><span class="line">  <span class="attribute">font-family</span>: icon-font;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(//at.alicdn.com/t/font_1426561436_1444216.eot);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="comment">/* 爱逛街业务自定义字体 */</span></span><br><span class="line">  <span class="attribute">font-family</span>: guang-iconfont; </span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(//at.alicdn.com/t/font_1426561436_1444216.eot);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="媒体查询（Media-query）规范"><a href="#媒体查询（Media-query）规范" class="headerlink" title="媒体查询（Media query）规范"></a>媒体查询（Media query）规范</h3><ul>
+<li>媒体查询建议根据需要采用下面两种组织形式：<ul>
+<li>将媒体查询放在尽可能相关规则的附近，不要放在文档底部，否则容易被后来维护的人遗忘</li>
+<li>媒体查询针对每一个种屏幕（大、中、小）的分别单独组织为一个文件</li>
+</ul>
+</li>
+</ul>
+<p>Example1:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.element-avatar</span> &#123; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.element-selected</span> &#123; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">480px</span>) &#123;</span><br><span class="line">	<span class="selector-class">.element</span> &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.element-avatar</span> &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.element-selected</span> &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Example2:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* base.css */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.element-avatar</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.element-selected</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* base-media-small.css */</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">480px</span>) &#123;</span><br><span class="line">	<span class="selector-class">.element</span> &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.element-avatar</span> &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.element-selected</span> &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="注释规范"><a href="#注释规范" class="headerlink" title="注释规范"></a>注释规范</h3><h4 id="代码注释"><a href="#代码注释" class="headerlink" title="代码注释"></a>代码注释</h4><ul>
+<li>代码是由人来编写和维护的。保证你的代码是描述性的，包含好的注释，并且容易被他人理解。好的代码注释传达上下文和目标。不要简单地重申组件或者 class 名称。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Modal header */</span></span><br><span class="line"><span class="selector-class">.modal-header</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Wrapping element for .modal-title and .modal-close */</span></span><br><span class="line"><span class="selector-class">.modal-header</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="文件注释"><a href="#文件注释" class="headerlink" title="文件注释"></a>文件注释</h4><ul>
+<li>文件注释，即声明在文件头部，描述文件的元信息，表明这个文件的作用是什么，如下例子：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 这个文件的作用是什么，巴拉巴拉</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><ul>
+<li><p>小写字母加连字符（不是下划线，也不是驼峰命名法）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* bad */</span></span><br><span class="line"><span class="selector-class">.mod_example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.modExample</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line"><span class="selector-class">.mod-example</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>需要在 javascript 中使用的类名以 J_ 开头，接“大驼峰”命名。例如 J_ExampleClass， 并且这类的 class 不能出现在 CSS 文件中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Bad Html Class for Javascript Hook --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mod-example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Good Html Class for Javascript Hook --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"J_ExampleClass"</span>&gt;</span>Just a Example<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="http://codeguide.co/#css" target="_blank" rel="noopener">Code Guide by @mdo</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/03/htmlSpecification/" rel="next" title="HTML 编码规范">
+                <i class="fa fa-chevron-left"></i> HTML 编码规范
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ll36</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wl036cl" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1251314957@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-编码规范"><span class="nav-number">1.</span> <span class="nav-text">CSS 编码规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本规范"><span class="nav-number">1.1.</span> <span class="nav-text">基本规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器规范"><span class="nav-number">1.2.</span> <span class="nav-text">选择器规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性规范"><span class="nav-number">1.3.</span> <span class="nav-text">属性规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性顺序"><span class="nav-number">1.3.1.</span> <span class="nav-text">属性顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简写形式的属性声明"><span class="nav-number">1.3.2.</span> <span class="nav-text">简写形式的属性声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-和-单位"><span class="nav-number">1.3.3.</span> <span class="nav-text">0 和 单位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色值十六进制表示法"><span class="nav-number">1.3.4.</span> <span class="nav-text">颜色值十六进制表示法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小数"><span class="nav-number">1.3.5.</span> <span class="nav-text">小数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引号"><span class="nav-number">1.3.6.</span> <span class="nav-text">引号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义-font-family"><span class="nav-number">1.3.7.</span> <span class="nav-text">自定义 font-family</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体查询（Media-query）规范"><span class="nav-number">1.4.</span> <span class="nav-text">媒体查询（Media query）规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释规范"><span class="nav-number">1.5.</span> <span class="nav-text">注释规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码注释"><span class="nav-number">1.5.1.</span> <span class="nav-text">代码注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件注释"><span class="nav-number">1.5.2.</span> <span class="nav-text">文件注释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名规范"><span class="nav-number">1.6.</span> <span class="nav-text">命名规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">1.7.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ll36</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-custom"><img class="footer-national-img" src="http://assets.ll36.cn/images/national-emblem.png"><span>浙ICP备15017476号</span></div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
