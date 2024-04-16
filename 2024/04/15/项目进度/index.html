@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="lowcode,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="已完成 （2.6，2.8）   拉起demo代码，调研，项目搭建，OSS配置，部署到日常环境，域名绑定解析   （2.16，2.17）   建数据库（project，page，page_version）， node改造（提供render和router api能力，操作数据库，暴露接口）， 前端项目将schema，packages等数据由本地改到线上   （2.20）   新增页面面板，支持多页面">
+<meta name="keywords" content="lowcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目进度">
+<meta property="og:url" content="https://blog.ll36.cn/2024/04/15/项目进度/index.html">
+<meta property="og:site_name" content="破浪小栈">
+<meta property="og:description" content="已完成 （2.6，2.8）   拉起demo代码，调研，项目搭建，OSS配置，部署到日常环境，域名绑定解析   （2.16，2.17）   建数据库（project，page，page_version）， node改造（提供render和router api能力，操作数据库，暴露接口）， 前端项目将schema，packages等数据由本地改到线上   （2.20）   新增页面面板，支持多页面">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2024-04-15T10:07:23.259Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目进度">
+<meta name="twitter:description" content="已完成 （2.6，2.8）   拉起demo代码，调研，项目搭建，OSS配置，部署到日常环境，域名绑定解析   （2.16，2.17）   建数据库（project，page，page_version）， node改造（提供render和router api能力，操作数据库，暴露接口）， 前端项目将schema，packages等数据由本地改到线上   （2.20）   新增页面面板，支持多页面">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.ll36.cn/2024/04/15/项目进度/">
+
+
+
+
+
+  <title>项目进度 | 破浪小栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="planet"><div class="crater"></div></div>
+    <div class="star"></div>
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">破浪小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">前端技术</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.ll36.cn/2024/04/15/项目进度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ll36">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://assets.ll36.cn/images/run.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="破浪小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">项目进度</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-04-15T17:45:05+08:00">
+                2024-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/lowcode/" itemprop="url" rel="index">
+                    <span itemprop="name">lowcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="EC913"></a></p>
+<h3 id="已完成"><a href="#已完成" class="headerlink" title="已完成"></a>已完成</h3><ul>
+<li><p>（2.6，2.8） </p>
+<ol>
+<li>拉起demo代码，调研，项目搭建，OSS配置，部署到日常环境，域名绑定解析</li>
+</ol>
+</li>
+<li><p>（2.16，2.17） </p>
+<ol>
+<li>建数据库（project，page，page_version），</li>
+<li>node改造（提供render和router api能力，操作数据库，暴露接口），</li>
+<li>前端项目将schema，packages等数据由本地改到线上</li>
+</ol>
+</li>
+<li><p>（2.20） </p>
+<ol>
+<li>新增页面面板，支持多页面，新增页面</li>
+</ol>
+</li>
+<li><p>（2.23，2.24） </p>
+<ol start="2">
+<li>版本分为发布，编辑两个。实现发布后二次编辑、发布。</li>
+<li>登录校验，用户信息</li>
+<li>项目-页面-版本对应的保存、重置、预览、发布逻辑处理</li>
+<li>预览页面（preview），loading，错误页</li>
+</ol>
+</li>
+<li><p>（3.1，3.2） </p>
+<ol>
+<li>利用平台，搭建“项目管理”页面，支持“新增”，“查询”，“编辑”，“删除” </li>
+<li>页面管理中，支持“编辑”，“复制”，“删除” </li>
+<li>发布预防、正式环境。 同步线上数据库，账号密码配置到流水线 </li>
+<li>加入 umeng 统计 </li>
+</ol>
+</li>
+<li><p>（3.3） </p>
+<ol>
+<li>支持通过path访问页面（后续正式页面通过path访问）（方便umeng统计，避免直接通过修改url撞库）</li>
+<li>服务端直接获取pageInfo，并修改title，icon，keywords（提升分享和SEO）</li>
+<li>接入umeng统计</li>
+<li>部署到预发，线上环境</li>
+<li>搭建第一个业务页面（2023淘宝服饰白皮书）（<a href="https://activity.zhizhuan100.com/trade/23fu" target="_blank" rel="noopener">https://activity.zhizhuan100.com/trade/23fu</a>）</li>
+</ol>
+</li>
+<li><p>（3.6，3.7，3.10） </p>
+<ol>
+<li>修改正式页面路径为 domain/path，code_schema等直接服务端返回 </li>
+<li>登录方式改为钉钉登录 </li>
+<li>根据umeng的python版SDK，封装node调用umeng的OpenAPI工具。 </li>
+<li>搭建第二个业务页面（2023天猫服饰白皮书） (<a href="https://activity.zhizhuan100.com/trade/23tmfu" target="_blank" rel="noopener">https://activity.zhizhuan100.com/trade/23tmfu</a>)</li>
+</ol>
+</li>
+<li><p>（3.13） </p>
+<ol>
+<li>流水线发布前端项目 </li>
+<li>搭建页面维度的统计数据（从umeng获取，业务可自行看到页面访问情况） </li>
+</ol>
+</li>
+<li><p>（3.15） </p>
+<ol>
+<li>加入重置到历史版本功能</li>
+</ol>
+</li>
+<li><p>（3.17）</p>
+<p>  a. 新增，复制，删除后，pagePanel 自动切换刷新（未建页面时，展示提示的defaultSchema）</p>
+</li>
+<li><p>（3.20）</p>
+<p>  a. 创建物料组件库：sypl-assets-workshop-materials，并接入到 sypl-assets-workshop 项目中</p>
+</li>
+<li><p>（3.22）</p>
+<p>  a. 增加项目权限管控（简单的项目-人的关系；无角色，无法自主申请）</p>
+</li>
+<li><p>（3.23）</p>
+<p>  a. 加入前端日志，优化日志通用字段，配置页面仪表盘。<br>    b. 移植unpkg的资源到oss，优化加载资源失败后提示语（业务反馈部分用户提示页面已下线，排查后猜测是<a href="http://unpkg.com" target="_blank" rel="noopener">unpkg.com</a> 的资源访问异常导致的）</p>
+</li>
+<li><p>（3.29）</p>
+<p>  a. 通过domain/path获取的pageDetail，加入5分钟 redis 缓存。<br>    b. 组件库，增加图片上传，折线图两个组件<br>    c. assetsJson 从阿里云 MSE 配置<br>    d. umeng统计页面，使用折线图代替表格</p>
+</li>
+<li><p>（4.4） </p>
+<ol>
+<li>智篆新商学堂——店铺诊断 (<a href="https://activity.zhizhuan100.com/zzedu/diacrisis" target="_blank" rel="noopener">https://activity.zhizhuan100.com/zzedu/diacrisis</a>)</li>
+</ol>
+</li>
+</ul>
+<p><a name="P9kvB"></a></p>
+<h3 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h3><ul>
+<li style="list-style: none"><input type="checkbox" checked> 按项目，页面分权限</li>
+<li style="list-style: none"><input type="checkbox" checked> 构建 智篆角色、权限管理 页面</li>
+<li style="list-style: none"><input type="checkbox" checked> 物料库项目</li>
+<li style="list-style: none"><input type="checkbox" checked> 图片，文件存储工具(页面)</li>
+<li style="list-style: none"><input type="checkbox" checked> 加入图表组件，统计页面，以图表展示</li>
+<li style="list-style: none"><input type="checkbox"> 构建 form 组件，支持搭建【新建、编辑、列表（搜索）、详情】全链路表单（含数据库）</li>
+<li style="list-style: none"><input type="checkbox" checked> PC、移动端，自适应</li>
+<li style="list-style: none"><input type="checkbox" checked> 富文本编辑器组件（在开发和线上环境下，均支持编辑和预览两种模式）</li>
+</ul>
+<p><a name="Fil8Q"></a></p>
+<h3 id="待修复bug"><a href="#待修复bug" class="headerlink" title="待修复bug"></a>待修复bug</h3><ul>
+<li style="list-style: none"><input type="checkbox" checked> 页面发布后，左侧页面面板未更新</li>
+<li style="list-style: none"><input type="checkbox" checked> 新建（复制）页面后，自动切到对应新页面</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/lowcode/" rel="tag"># lowcode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2024/04/15/物料库/" rel="next" title="物料库">
+                <i class="fa fa-chevron-left"></i> 物料库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2024/04/15/行业报告/" rel="prev" title="行业报告">
+                行业报告 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://assets.ll36.cn/images/run.svg" alt="ll36">
+            
+              <p class="site-author-name" itemprop="name">ll36</p>
+              <p class="site-description motion-element" itemprop="description">在前端领域摸爬滚打的这些年，记录一下感想和总结</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wl036cl" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1251314957@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#已完成"><span class="nav-number">1.</span> <span class="nav-text">已完成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待办"><span class="nav-number">2.</span> <span class="nav-text">待办</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待修复bug"><span class="nav-number">3.</span> <span class="nav-text">待修复bug</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ll36</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-custom"><img class="footer-national-img" src="http://assets.ll36.cn/images/national-emblem.png"><span>浙ICP备15017476号</span></div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
