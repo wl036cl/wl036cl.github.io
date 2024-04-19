@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="http://assets.ll36.cn/images/anchor.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="lowcode,架构,form,table," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="设计图纵横（图片存储）：https://content.alibaba-inc.com/work/internal-media-management/image/list智篆文件管理（图片存储）：https://activity.zhizhuan100.com/it/files低代码平台：https://activity.zhizhuan100.com/console注：【纵横】属于阿里集团平台">
+<meta name="keywords" content="lowcode,架构,form,table">
+<meta property="og:type" content="article">
+<meta property="og:title" content="行业报告">
+<meta property="og:url" content="https://blog.ll36.cn/2024/04/15/行业报告/index.html">
+<meta property="og:site_name" content="破浪小栈">
+<meta property="og:description" content="设计图纵横（图片存储）：https://content.alibaba-inc.com/work/internal-media-management/image/list智篆文件管理（图片存储）：https://activity.zhizhuan100.com/it/files低代码平台：https://activity.zhizhuan100.com/console注：【纵横】属于阿里集团平台">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2024/png/127077/1710472521718-2b8e4be7-f011-4a00-ab90-3fd219112240.png#clientId=u3958041d-2b34-4&from=paste&height=772&id=u72565202&originHeight=772&originWidth=2740&originalType=binary&ratio=1&rotation=0&showTitle=false&size=95920&status=done&style=none&taskId=u8c1fa9ec-f5db-45b4-af73-9dcbc8b1878&title=&width=2740">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2023/png/127077/1692588598956-d97dca66-f2f4-4202-8c53-c306cddf9291.png#clientId=uc1900c29-26d5-4&from=paste&height=951&id=ub4b1d320&originHeight=951&originWidth=1051&originalType=binary&ratio=1&rotation=0&showTitle=false&size=798518&status=done&style=none&taskId=u4052eb5a-899b-4511-a323-d7c8954bf67&title=&width=1051">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2023/png/127077/1689327710676-86301a15-95ba-46bb-8427-28904e565c79.png#clientId=u7d5044a8-48ce-4&from=paste&height=1544&id=u160fe640&originHeight=1544&originWidth=3342&originalType=binary&ratio=1&rotation=0&showTitle=false&size=4818204&status=done&style=none&taskId=u79376324-9bef-43cc-b925-0449e63b822&title=&width=3342">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2023/png/127077/1689327983162-5370ff45-35a8-4e8d-b849-350bccfe3cf6.png#clientId=u7d5044a8-48ce-4&from=paste&height=1490&id=uc6525d3b&originHeight=1490&originWidth=3354&originalType=binary&ratio=1&rotation=0&showTitle=false&size=4962158&status=done&style=none&taskId=uef537c1a-9e6f-4ba2-9d46-a4b438d5413&title=&width=3354">
+<meta property="og:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2023/png/127077/1689328204821-e63b34b8-6a20-4262-b94a-eab42bde4654.png#clientId=u7d5044a8-48ce-4&from=paste&height=1562&id=ub94c2fb4&originHeight=1562&originWidth=3348&originalType=binary&ratio=1&rotation=0&showTitle=false&size=5226599&status=done&style=none&taskId=uc7fafb21-010c-4722-b0f0-a8ab119e791&title=&width=3348">
+<meta property="og:updated_time" content="2024-04-15T10:05:53.859Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="行业报告">
+<meta name="twitter:description" content="设计图纵横（图片存储）：https://content.alibaba-inc.com/work/internal-media-management/image/list智篆文件管理（图片存储）：https://activity.zhizhuan100.com/it/files低代码平台：https://activity.zhizhuan100.com/console注：【纵横】属于阿里集团平台">
+<meta name="twitter:image" content="https://intranetproxy.alipay.com/skylark/lark/0/2024/png/127077/1710472521718-2b8e4be7-f011-4a00-ab90-3fd219112240.png#clientId=u3958041d-2b34-4&from=paste&height=772&id=u72565202&originHeight=772&originWidth=2740&originalType=binary&ratio=1&rotation=0&showTitle=false&size=95920&status=done&style=none&taskId=u8c1fa9ec-f5db-45b4-af73-9dcbc8b1878&title=&width=2740">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.ll36.cn/2024/04/15/行业报告/"/>
+
+
+
+
+
+  <title>行业报告 | 破浪小栈</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="planet"><div class="crater"></div></div>
+    <div class="star"></div>
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">破浪小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">前端技术</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.ll36.cn/2024/04/15/行业报告/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ll36">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://assets.ll36.cn/images/run.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="破浪小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">行业报告</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-04-15T17:45:05+08:00">
+                2024-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/lowcode/" itemprop="url" rel="index">
+                    <span itemprop="name">lowcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="FscYP"></a></p>
+<h3 id="设计图"><a href="#设计图" class="headerlink" title="设计图"></a>设计图</h3><p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2024/png/127077/1710472521718-2b8e4be7-f011-4a00-ab90-3fd219112240.png#clientId=u3958041d-2b34-4&amp;from=paste&amp;height=772&amp;id=u72565202&amp;originHeight=772&amp;originWidth=2740&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=95920&amp;status=done&amp;style=none&amp;taskId=u8c1fa9ec-f5db-45b4-af73-9dcbc8b1878&amp;title=&amp;width=2740" alt="image.png"><br><strong><del>纵横（图片存储）：</del></strong><a href="https://content.alibaba-inc.com/work/internal-media-management/image/list" target="_blank" rel="noopener"><del>https://content.alibaba-inc.com/work/internal-media-management/image/list</del></a><br><strong>智篆文件管理（图片存储）：</strong><a href="https://activity.zhizhuan100.com/it/files" target="_blank" rel="noopener"><strong>https://activity.zhizhuan100.com/it/files</strong></a><br><strong>低代码平台：</strong><a href="https://activity.zhizhuan100.com/console" target="_blank" rel="noopener">https://activity.zhizhuan100.com/console</a><br><strong>注：</strong>【纵横】属于阿里集团平台未来可能无法使用，智篆推荐使用【智篆文件管理】代替【纵横】。其他流程不变。</p>
+<p><a name="wXUFc"></a></p>
+<h3 id="开发页面"><a href="#开发页面" class="headerlink" title="开发页面"></a>开发页面</h3><p><a name="BKE5k"></a></p>
+<h4 id="任务项"><a href="#任务项" class="headerlink" title="任务项"></a>任务项</h4><ul>
+<li style="list-style: none"><input type="checkbox" checked> 物料库开发轮播容器组件</li>
+<li style="list-style: none"><input type="checkbox" checked> 低代码平台引用轮播容器组件</li>
+<li style="list-style: none"><input type="checkbox" checked> 低代码平台创建新项目（智篆GI）</li>
+<li style="list-style: none"><input type="checkbox" checked> 低代码创建页面选择模版功能</li>
+<li style="list-style: none"><input type="checkbox" checked> 对应页面可进行数据统计</li>
+<li style="list-style: none"><input type="checkbox" checked> 配置第一期测试案例</li>
+</ul>
+<p><a name="x8PGM"></a></p>
+<h3 id="业务操作教程"><a href="#业务操作教程" class="headerlink" title="业务操作教程"></a>业务操作教程</h3><p><a name="KCK0c"></a></p>
+<h4 id="上传本地图片，获取图片地址"><a href="#上传本地图片，获取图片地址" class="headerlink" title="上传本地图片，获取图片地址"></a>上传本地图片，获取图片地址</h4><p>方法一：行业报告切分成图片，并上传图片到 <a href="https://content.alibaba-inc.com/work/internal-media-management/image/list" target="_blank" rel="noopener">纵横</a><br>方法二：行业报告切分成图片，并上传图片到 <a href="https://activity.zhizhuan100.com/it/files" target="_blank" rel="noopener">智篆文件管理平台</a>(需找技术同学开通权限)<br><a name="HnRrO"></a></p>
+<h4 id="创建报告网页"><a href="#创建报告网页" class="headerlink" title="创建报告网页"></a>创建报告网页</h4><ol>
+<li>在 <a href="https://activity.zhizhuan100.com/console" target="_blank" rel="noopener">低代码平台</a> 新建页面（也可以直接复制已有页面）。注：a. 路径必填且后续不可改；b. 分享图片设置后，在钉钉等APP内分享链接会自动显示该图片；c. 关键词、描述可以提升百度、谷歌等搜索引擎搜索到的该页面的概率；d. 行业报告形式的页面，模版选择图片轮播。</li>
+</ol>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2023/png/127077/1692588598956-d97dca66-f2f4-4202-8c53-c306cddf9291.png#clientId=uc1900c29-26d5-4&amp;from=paste&amp;height=951&amp;id=ub4b1d320&amp;originHeight=951&amp;originWidth=1051&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=798518&amp;status=done&amp;style=none&amp;taskId=u4052eb5a-899b-4511-a323-d7c8954bf67&amp;title=&amp;width=1051" alt="image.png"></p>
+<ol start="2">
+<li>将纵横或（智篆文件管理平台）上生成的图片地址，按顺序填写到 <a href="https://activity.zhizhuan100.com/console" target="_blank" rel="noopener">低代码平台</a> 如下图对应位置。</li>
+</ol>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2023/png/127077/1689327710676-86301a15-95ba-46bb-8427-28904e565c79.png#clientId=u7d5044a8-48ce-4&amp;from=paste&amp;height=1544&amp;id=u160fe640&amp;originHeight=1544&amp;originWidth=3342&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4818204&amp;status=done&amp;style=none&amp;taskId=u79376324-9bef-43cc-b925-0449e63b822&amp;title=&amp;width=3342" alt="image.png"></p>
+<ol start="3">
+<li>提升用户体验，将背景色与图片相融合</li>
+</ol>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2023/png/127077/1689327983162-5370ff45-35a8-4e8d-b849-350bccfe3cf6.png#clientId=u7d5044a8-48ce-4&amp;from=paste&amp;height=1490&amp;id=uc6525d3b&amp;originHeight=1490&amp;originWidth=3354&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4962158&amp;status=done&amp;style=none&amp;taskId=uef537c1a-9e6f-4ba2-9d46-a4b438d5413&amp;title=&amp;width=3354" alt="image.png"></p>
+<ol start="4">
+<li>点击右上角【预览】，体验效果（后续每次修改，点击【保存】,刷新预览页面即可查看最新效果）。</li>
+<li>点击右上角【发布】，即可发布到线上，并会打开正式环境地址（每次发布，正式页面可能会有5分钟缓存，刷新并不会及时生效）。<br><a name="aVtKq"></a><h4 id="查看网页访问数据"><a href="#查看网页访问数据" class="headerlink" title="查看网页访问数据"></a>查看网页访问数据</h4>如下图【打开】的新页面，网址即为正式环境地址（可分享给客户）。【统计】打开的页面可查看该网页用户访问数量。<br><img src="https://intranetproxy.alipay.com/skylark/lark/0/2023/png/127077/1689328204821-e63b34b8-6a20-4262-b94a-eab42bde4654.png#clientId=u7d5044a8-48ce-4&amp;from=paste&amp;height=1562&amp;id=ub94c2fb4&amp;originHeight=1562&amp;originWidth=3348&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5226599&amp;status=done&amp;style=none&amp;taskId=uc7fafb21-010c-4722-b0f0-a8ab119e791&amp;title=&amp;width=3348" alt="image.png"></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/lowcode/" rel="tag"># lowcode</a>
+          
+            <a href="/tags/架构/" rel="tag"># 架构</a>
+          
+            <a href="/tags/form/" rel="tag"># form</a>
+          
+            <a href="/tags/table/" rel="tag"># table</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2024/04/15/项目进度/" rel="next" title="项目进度">
+                <i class="fa fa-chevron-left"></i> 项目进度
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://assets.ll36.cn/images/run.svg"
+                alt="ll36" />
+            
+              <p class="site-author-name" itemprop="name">ll36</p>
+              <p class="site-description motion-element" itemprop="description">在前端领域摸爬滚打的这些年，记录一下感想和总结</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wl036cl" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1251314957@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计图"><span class="nav-number">1.</span> <span class="nav-text">设计图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发页面"><span class="nav-number">2.</span> <span class="nav-text">开发页面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#任务项"><span class="nav-number">2.1.</span> <span class="nav-text">任务项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务操作教程"><span class="nav-number">3.</span> <span class="nav-text">业务操作教程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#上传本地图片，获取图片地址"><span class="nav-number">3.1.</span> <span class="nav-text">上传本地图片，获取图片地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建报告网页"><span class="nav-number">3.2.</span> <span class="nav-text">创建报告网页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看网页访问数据"><span class="nav-number">3.3.</span> <span class="nav-text">查看网页访问数据</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ll36</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-custom"><img class="footer-national-img" src="http://assets.ll36.cn/images/national-emblem.png"><span>浙ICP备15017476号</span></div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
